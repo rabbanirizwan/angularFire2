@@ -1,0 +1,33 @@
+<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
+
+<div *ngIf="!(authService.user | async)">
+  <input type="text" [(ngModel)]="email" placeholder="email">
+  <input type="password" [(ngModel)]="password" placeholder="email">
+
+  <button (click)="signup()" [disabled]="!email || !password">
+    Signup
+  </button>
+
+  <button (click)="login()" [disabled]="!email || !password">
+    Login
+  </button>
+</div>
+
+<button (click)="logout()" *ngIf="authService.user | async">
+  Logout
+</button>
+
+
+<hr>
+<hr>
+<hr>
+
+<div *ngIf="authService.uid | async as uid ; else login ">
+  the user is logged in .{{uid}}
+  <div *ngIf='authService.isAdmin | async'> the user is present </div>
+  <div><button (click)="authService.logout()">logout</button></div>
+</div>
+
+<ng-template #login>
+you need to login <button (click)="authService.googleLogin()">login</button>
+</ng-template>
