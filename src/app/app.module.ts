@@ -63,20 +63,26 @@ firebase.initializeApp(environment.firebaseConfig)
   ],
   providers: [ItemService,AngularFireDatabase,AuthService],
   bootstrap: [AppComponent],
-  entryComponents:[ VerifyEmailComponent,ForgotPasswordComponent]
+  entryComponents:[ VerifyEmailComponent]
 })
 export class AppModule { 
   constructor(private injector:Injector){}
 
   ngDoBootstrap(){
-    const elements:any[]=[
-      [AddItemComponent,"Add"],
-      [ForgotPasswordComponent,"fpassword"]
-    ]
+    // const elements:any[]=[
+    //   [AddItemComponent,"Add"],
+    //   [ForgotPasswordComponent,"fpassword"]
+    // ]
 
-    for(const[component,name] of elements){
-    const el =createCustomElement(component,{injector:this.injector});
-    customElements.define(name,el)
-    }
+    // for(const[component,name] of elements){
+    // const el =createCustomElement(component,{injector:this.injector});
+    // customElements.define(name,el)
+    // }
+
+  
+      const el = createCustomElement(VerifyEmailComponent, { injector: this.injector });
+      customElements.define('framework-poll', el);
+    
   }
-}
+  }
+

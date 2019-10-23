@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:elements": "ng build --prod --output-hashing none && node elements-build.js"
   },
   "private": true,
   "dependencies": {
@@ -23,16 +24,18 @@
     "@google-cloud/translate": "^4.2.1",
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
+    "concat": "^1.0.3",
+    "document-register-element": "^1.7.2",
     "firebase": "^7.2.1",
     "font-awesome": "^4.7.0",
+    "fs-extra": "^8.1.0",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.3",
     "spinkit": "^1.2.5",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "document-register-element": "^1.7.2"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.12",
