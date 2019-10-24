@@ -33,7 +33,8 @@ import { EmojiComponent } from './components/emoji/emoji.component';
 import { SortableDirective } from './sortable.directive';
 import { HoldableDirective } from './holdable.directive';
 import { UpComponent } from './components/up/up.component';
-
+import {CdkTableModule} from '@angular/cdk/table';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
 
 
 firebase.initializeApp(environment.firebaseConfig)
@@ -55,7 +56,8 @@ firebase.initializeApp(environment.firebaseConfig)
     EmojiComponent,
     SortableDirective,
     HoldableDirective,
-    UpComponent
+    UpComponent,
+    PaymentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ firebase.initializeApp(environment.firebaseConfig)
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireFunctionsModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    CdkTableModule
   ],
   providers: [ItemService,AngularFireDatabase,AuthService],
   bootstrap: [AppComponent],

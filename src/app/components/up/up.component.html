@@ -6,4 +6,39 @@
  
   </ul>
 
-  
+  <!-- <table class="table table-dark" cdk-table [dataSource]="dataSource">
+   <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+   <tr cdk-row *cdkRowDef ="let row; columns:columns"></tr>
+
+   <ng-container cdkColumnDef="name">
+       <th cdk-header-cell * cdkHeaderCellDef> Hero Name</th>
+       <td cdk-cell *cdkCellDef ="let row">{{row.name}}</td>
+   </ng-container>
+
+   <ng-container cdkColumnDef="name">
+    <th cdk-header-cell * cdkHeaderCellDef> Hero Name</th>
+    <td cdk-cell *cdkCellDef ="let row">{{row.type}}</td>
+</ng-container>
+<ng-container cdkColumnDef="name">
+    <th cdk-header-cell * cdkHeaderCellDef> Hero Name</th>
+    <td cdk-cell *cdkCellDef ="let row">{{row.attack}}</td>
+</ng-container>
+
+<ng-container cdkColumnDef="name">
+        <th cdk-header-cell * cdkHeaderCellDef> Hero Name</th>
+        <td cdk-cell *cdkCellDef ="let row">{{row.defense}}</td>
+    </ng-container>
+    <ng-container cdkColumnDef="name">
+            <th cdk-header-cell * cdkHeaderCellDef> Hero Name</th>
+            <td cdk-cell *cdkCellDef ="let row">{{row.speed}}</td>
+        </ng-container>
+        
+    
+<ng-container cdkColumnDef="levelUp">
+    <th cdk-header-cell * cdkHeaderCellDef></th>
+    <td cdk-cell *cdkCellDef ="let row">
+        <button (click)="levelUp(row.name)" class="button button-primary">level up</button>
+    </td>
+</ng-container>
+  </table>
+   -->

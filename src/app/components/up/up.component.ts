@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore,AngularFirestoreDocument ,AngularFirestoreCollection  } from '@angular/fire/firestore';
-import { Observable,of,from } from 'rxjs';
+import { Observable,of,from,BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators/map';
 import { collectionData } from 'rxfire/firestore';
 import * as firebase from 'firebase';
 import { switchMap } from 'rxjs/operators';
 import { docData } from 'rxfire/firestore';
 import { snapshotChanges } from 'angularfire2/database';
+import {ColumnName,heroes} from '../../table'
+
 export interface Item {
   name: string;
   description:string 
@@ -18,6 +20,9 @@ export interface Item {
 })
 export class UpComponent implements OnInit {
 
+  private heroes$= new BehaviorSubject(heroes) 
+  dataSource$:Observable<any[]>
+  column= ColumnName
    i:Observable<any>
 
   private itemsCollection:AngularFirestoreCollection<Item>
@@ -59,14 +64,26 @@ export class UpComponent implements OnInit {
 // .subscribe(food => console.log(food))
 //     }
  
-const firestore=db.collection("emoji")
-const query =firestore.where('favs',"array-contains",'camera')
-query.get().then(snapshot =>{
-  snapshot.docs.forEach(doc =>{
+// const firestore=db.collection("emoji")
+// const query =firestore.where('favs',"array-contains",'camera')
+// query.get().then(snapshot =>{
+//   snapshot.docs.forEach(doc =>{
    
-    console.log(doc.id,doc.data())
-  })
-})
+//     console.log(doc.id,doc.data())
+//   })
+// })
 
+
+
+//this.dataSource$ =this.heroes$.pipe(map(v=> Object.values(v)));
+//console.log(this.dataSource$.subscribe())
+}
+levelUp(heroName:string){
+ const UpdatedHero = this.heroes$.value[heroName]
+  UpdatedHero.attack++;
+  UpdatedHero.defense++;
+  UpdatedHero.speed++;
+ const newHeroData = {...this.heroes$.value, [heroName]:UpdatedHero};
+ this.heroes$.next(newHeroData);
 }
 }
