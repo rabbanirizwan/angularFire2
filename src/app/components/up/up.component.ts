@@ -78,12 +78,12 @@ export class UpComponent implements OnInit {
 //this.dataSource$ =this.heroes$.pipe(map(v=> Object.values(v)));
 //console.log(this.dataSource$.subscribe())
 }
-levelUp(heroName:string){
- const UpdatedHero = this.heroes$.value[heroName]
-  UpdatedHero.attack++;
-  UpdatedHero.defense++;
-  UpdatedHero.speed++;
- const newHeroData = {...this.heroes$.value, [heroName]:UpdatedHero};
- this.heroes$.next(newHeroData);
-}
+// levelUp(heroName:string){
+//  const UpdatedHero = this.heroes$.value[heroName]
+//   UpdatedHero.attack++;
+//   UpdatedHero.defense++;
+//   UpdatedHero.speed++;
+//  const newHeroData = {...this.heroes$.value, [heroName]:UpdatedHero};
+//  this.heroes$.next(newHeroData);
+// }
 }
