@@ -20,7 +20,10 @@
                     </div>  
                      
                     <input type="submit" value="Update Item" class="btn orange">
-                <button (click)="deleteItem($event,item)" class="btn red"> Delete Item</button>
+
+
+                <button holdable (holdTime) ="deleteItem($event,item)" class="btn btn-primary"> Delete Item</button>
+                <progress [value]="progress" max="100" class="danger" ></progress>
                 </div>
             </form>
         </div>
@@ -28,6 +31,8 @@
         </li>
     </ul>
 </div>
+
+
 <ng-template #noItems>
     <app-loading></app-loading>
 </ng-template>

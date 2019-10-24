@@ -31,6 +31,7 @@ import { TranslateComponent } from './components/translate/translate.component';
 import {createCustomElement} from '@angular/elements';
 import { EmojiComponent } from './components/emoji/emoji.component';
 import { SortableDirective } from './sortable.directive';
+import { HoldableDirective } from './holdable.directive';
 
 
 
@@ -51,7 +52,8 @@ firebase.initializeApp(environment.firebaseConfig)
     FileDropDirective,
     TranslateComponent,
     EmojiComponent,
-    SortableDirective
+    SortableDirective,
+    HoldableDirective
   ],
   imports: [
     BrowserModule,
