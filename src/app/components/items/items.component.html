@@ -22,7 +22,7 @@
                     <input type="submit" value="Update Item" class="btn orange">
 
 
-                <button holdable (holdTime) ="deleteItem($event,item)" class="btn btn-primary"> Delete Item</button>
+                <button (click)="deleteItem($event,item)" class="btn btn-primary"> Delete Item</button>
                 <progress [value]="progress" max="100" class="danger" ></progress>
                 </div>
             </form>

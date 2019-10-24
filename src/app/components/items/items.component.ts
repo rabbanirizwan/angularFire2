@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import {Item} from '../../item';
-import {Observable} from 'rxjs/observable'
+import {Observable} from 'rxjs/observable';
+import {HoldableDirective} from '../../holdable.directive'
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  styleUrls: ['./items.component.css'],
 })
 export class ItemsComponent implements OnInit {
  
@@ -43,8 +44,7 @@ export class ItemsComponent implements OnInit {
   // }
   deleteItem(event,item:Item){
     this.clearState()
-    this.progress = event / 10;
-    console.log(this.progress)
+   
   
    // if (this.progress === 100) {
     this.itemService.delete(item)

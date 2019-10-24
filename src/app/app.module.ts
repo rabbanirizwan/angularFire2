@@ -32,6 +32,7 @@ import {createCustomElement} from '@angular/elements';
 import { EmojiComponent } from './components/emoji/emoji.component';
 import { SortableDirective } from './sortable.directive';
 import { HoldableDirective } from './holdable.directive';
+import { UpComponent } from './components/up/up.component';
 
 
 
@@ -53,7 +54,8 @@ firebase.initializeApp(environment.firebaseConfig)
     TranslateComponent,
     EmojiComponent,
     SortableDirective,
-    HoldableDirective
+    HoldableDirective,
+    UpComponent
   ],
   imports: [
     BrowserModule,
