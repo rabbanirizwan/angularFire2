@@ -29,6 +29,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { TranslateComponent } from './components/translate/translate.component';
 
 import {createCustomElement} from '@angular/elements';
+import { EmojiComponent } from './components/emoji/emoji.component';
+import { SortableDirective } from './sortable.directive';
 
 
 
@@ -47,7 +49,9 @@ firebase.initializeApp(environment.firebaseConfig)
     VerifyEmailComponent,
     LoadingComponent,
     FileDropDirective,
-    TranslateComponent
+    TranslateComponent,
+    EmojiComponent,
+    SortableDirective
   ],
   imports: [
     BrowserModule,

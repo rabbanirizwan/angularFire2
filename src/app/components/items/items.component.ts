@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import {Item} from '../../item';
+import {Observable} from 'rxjs/observable'
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -13,18 +14,25 @@ export class ItemsComponent implements OnInit {
   editState:boolean=false;
   itemTOEdit:Item;
   showSpinner: boolean = true;
+  i:any[];
   constructor(private itemService:ItemService) { }
 
-  ngOnInit() {
+   ngOnInit() { //Promise<Observable<Item[]>>
     this.itemService.getItem().subscribe(items =>{
       this.items=items
       this.showSpinner=false;
     })
 
+  
+  //  
     // this.spinnner = this.itemService.getItem({limitToLast: 5})
     // this.spinnner.subscribe((items) => {this.showSpinner = false,this.items=items})
     //this.itemService
   }
+  // GetData(){
+  //   this.items=this.itemService.all() 
+   
+  // }
   deleteItem(event,item:Item){
     this.clearState()
     console.log("delete")

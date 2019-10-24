@@ -1,0 +1,13 @@
+<ul sortable
+ 
+ *ngIf ="doc$ | async"
+ [data]="doc.favs"
+ (stop)="update($event)">
+ 
+    <li *ngFor="let emoji of doc.favs">{{emoji}}
+        <span (click)="removeItem(emoji)"></span>
+    </li>
+    
+  </ul>
+  <hr>
+  <button (click)="appendItem()"> Append Item</button>

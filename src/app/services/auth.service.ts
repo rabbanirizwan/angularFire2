@@ -83,8 +83,8 @@ export class AuthService {
       });    
   }
 
-  login(email: string, password: string) {
-    this.afAuth
+  async login(email: string, password: string) {
+    await this.afAuth
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
