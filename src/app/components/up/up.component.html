@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Add User</span>
+       
+        <form (ngSubmit)="addItem()" >
+            <div class="form-group">
+              <label for="exampleInputEmail1">add movie</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="movie.name"   placeholder="add name">
+            
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">review about movie</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="review" [(ngModel)]="movie.review" name="review">
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+
+<div *ngFor="let item of fan" class="card">
+    <div class="card-header">
+      {{item.name}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">IMDB   {{item.rating}}</h5>
+      <p class="card-text">{{item.review}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>

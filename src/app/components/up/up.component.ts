@@ -11,8 +11,11 @@ import {ColumnName,heroes} from '../../table'
 import {FormBuilder,FormGroup} from '@angular/forms'
 export interface Item {
   name: string;
-  description:string 
+  rating:string;
+  review:string 
 }
+
+
 @Component({
   selector: 'app-up',
   templateUrl: './up.component.html',
@@ -21,6 +24,29 @@ export interface Item {
 export class UpComponent implements OnInit {
   db = firebase.firestore();
 
+  
+  movie:Item={
+    name:'',
+    rating:'',
+    review:''
+  }
+  items:Item={
+    name:'',
+    rating:'',
+    review:''
+  }
+  
+  fan=[]
+  data1 =[
+    {
+      name:"rizwan",
+      description:"dash"
+    },
+    {
+      name:"rabbani",
+      description:"dash"
+    }
+  ]
   constructor(private afs: AngularFirestore) { 
   
   }
@@ -30,47 +56,34 @@ export class UpComponent implements OnInit {
     // const source = of( { 'foo': 1, 'bar': 'str', 'baz': 3 });
   // source.map(val=>Object.values(val)).subscribe(data => console.log(data))
   
+ 
   this.getItem()
 
 }
 
 async getItem(){
-  const doc = await this.db.collection('emoji').get();
+  const doc = await this.db.collection('movie').get();
          
   let array1= [];
      
      doc.forEach(doc =>{
-    array1.push(doc.data());  
+       
+    this.fan.push(doc.data());  
     })
-    console.log(array1)
-  
+    // console.log(this.fan)
+   
   return array1;
-}
- add(){
-  this.db.collection("users").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
-
 }
 
 async addItem(){
 
-  await setTimeout(()=>{
-    this.db.collection("users").add({
-      first: "Ducj",
-      last: "Kanaelace",
-      born: 1852
-  })
-  },5000);
+   if(this.movie.name!=='' && this.movie.review!=='')
+   {
+    this.db.collection("movie").add(this.movie)
 
+   }
+    
+  this.getItem()
 }
 
 }
