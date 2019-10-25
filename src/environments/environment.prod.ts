@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  StripeKey:'sk_test_UNWGCHfTL9UPLFXqQKiVtPwJ00KzXvWLWe',
   firebaseConfig : {
     apiKey: "AIzaSyDQ3MARGVWsmNMvnP_potvRZxLtMbBjQ2w",
     authDomain: "angular-3b931.firebaseapp.com",

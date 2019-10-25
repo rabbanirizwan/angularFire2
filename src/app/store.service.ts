@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable,pipe } from 'rxjs';
 import { scan,map, distinctUntilChanged, shareReplay } from 'rxjs/operators';
 import { omit,get, isEqual } from 'lodash';
-
 export class Action {
   constructor(public type: string, public payload?: any) {}
 }

@@ -36,6 +36,14 @@ import { UpComponent } from './components/up/up.component';
 import {CdkTableModule} from '@angular/cdk/table';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+
+import {MatChipsModule} from '@angular/material/chips';
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 firebase.initializeApp(environment.firebaseConfig)
 @NgModule({
@@ -70,7 +78,13 @@ firebase.initializeApp(environment.firebaseConfig)
     AngularFireAuthModule,
     AngularFireFunctionsModule,
     AngularFireStorageModule,
-    CdkTableModule
+    CdkTableModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatInputModule,
+    MatChipsModule
   ],
   providers: [ItemService,AngularFireDatabase,AuthService],
   bootstrap: [AppComponent],

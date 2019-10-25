@@ -13,8 +13,9 @@ export class ItemService {
   itemDoc:AngularFirestoreDocument<Item>
   collection: any;
   constructor(public afs:AngularFirestore) {
-    this.collection = firebase.firestore().collection('user');
+    this.collection = firebase.firestore().collection('users');
      this.itemCollection=this.afs.collection('users')
+     
     // this.items=   this.itemCollection.snapshotChanges().map(changes =>{
     //   return changes.map(a=>{
     //     const data = a.payload.doc.data() as Item;

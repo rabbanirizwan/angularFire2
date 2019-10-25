@@ -1,4 +1,1 @@
-export interface User {
-    // Firebase UID
-   
-  }
+console.log("jsdjsd")

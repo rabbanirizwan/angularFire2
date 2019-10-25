@@ -7,6 +7,8 @@ export class User{
     constructor(auth) {
         this.uid = auth.uid
       }
-    
+
+   
 }
+
 

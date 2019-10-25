@@ -20,35 +20,21 @@ export class ItemsComponent implements OnInit {
      
   progress: number;
 
-  //delete(e) {
-    
-    
-    //  this.firestore.doc(`customers/bob`).delete()
-    //}
-  //}
    ngOnInit() { //Promise<Observable<Item[]>>
     this.itemService.getItem().subscribe(items =>{
+
       this.items=items
+      console.log(items)
       this.showSpinner=false;
     })
 
   
-  //  
-    // this.spinnner = this.itemService.getItem({limitToLast: 5})
-    // this.spinnner.subscribe((items) => {this.showSpinner = false,this.items=items})
-    //this.itemService
   }
-  // GetData(){
-  //   this.items=this.itemService.all() 
-   
-  // }
+  
   deleteItem(event,item:Item){
     this.clearState()
-   
+     this.itemService.delete(item)
   
-   // if (this.progress === 100) {
-    this.itemService.delete(item)
-  //}
 }
   editItem(event,item:Item){
     this.editState=true;
@@ -60,7 +46,7 @@ export class ItemsComponent implements OnInit {
   }
   update(item:Item)
   {
-    console.log(item)
+   
     this.itemService.updateItem(item);
     this.clearState();
   }
